@@ -1,0 +1,9 @@
+<h1>Welcome to our crazy website ! </h1>
+<p>This website is dedicated to cocktails</p>
+
+  <% @cocktails.each do |cocktail|  %>
+    <%= link_to "#{cocktail.name}", cocktail_path(cocktail.id) %>
+  <% end %>
+<br>
+<%= link_to "Add a cocktail", new_cocktail_path %>
+

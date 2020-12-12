@@ -1,0 +1,16 @@
+<h1>this is the cocktail description</h1>
+<br>
+<%= @cocktail.name %>
+<br>
+<%= simple_form_for @cocktail do |f| %>
+  <%= f.input :name %>
+  <%= f.association :dose %>
+  <%= f.association :ingredient %>
+  <%= f.button :submit %>
+<% end %>
+
+
+<%= link_to "Bo back homepage", cocktails_path %>
+
+<!-- add a form to add a dose
+add a bin to destroy a dose -->
