@@ -1,16 +1,19 @@
 <h1>this is the cocktail description</h1>
 <br>
 <%= @cocktail.name %>
-<br>
-<%= simple_form_for @cocktail do |f| %>
-  <%= f.input :name %>
-  <%= f.association :dose %>
-  <%= f.association :ingredient %>
-  <%= f.button :submit %>
+<% @cocktail.doses.each do |dose| %>
+  <%= dose.ingredient.name %>
+  <%= dose.description %>
+  <%= link_to "Delete this ingredient", dose_path(dose), method: :delete, data: { confirm: "are  you sure ?" } %>
+  <!-- si le lien change pour une icone il faudra  transformer la string en do à mettre ) la fin  -->
 <% end %>
 
+<br>
+<%= render "doses/new", cocktail: @cocktail, dose: @dose  %>
 
+<br>
+
+<!-- add the delete action
+ -->
 <%= link_to "Bo back homepage", cocktails_path %>
 
-<!-- add a form to add a dose
-add a bin to destroy a dose -->
