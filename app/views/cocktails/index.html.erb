@@ -1,14 +1,21 @@
-<h1>Cocktail for a sweet night</h1>
-<p>This website is dedicated to cocktails</p>
+<div class="banner">
+  <h1>Cocktail for a sweet night</h1>
+  <p>This website is dedicated to cocktails</p>
+  <!-- <img src="/images/images_home_1.jpg" alt="image d'un cocktail"> -->
+  <%= link_to new_cocktail_path do %>
+     <i class="fas fa-arrow-circle-down"></i>
+    <% end %>
+</div>
 
-  <% @cocktails.each do |cocktail|  %>
-  <div class="cards">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        <%= link_to "#{cocktail.name}", cocktail_path(cocktail.id) %>
+  <div class="row">
+      <% @cocktails.each do |cocktail|  %>
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="card-category">
+          <%= link_to "#{cocktail.name}", cocktail_path(cocktail.id) %>
+        </div>
       </div>
+      <% end %>
   </div>
-  <% end %>
-
 
 <br>
   <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-primary" %>
