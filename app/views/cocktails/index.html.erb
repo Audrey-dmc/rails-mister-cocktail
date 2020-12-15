@@ -11,6 +11,8 @@
 
 
 <br>
-<button type="button" class="btn btn-primary">Add a cocktail
-  <% link_to "Add a cocktail", new_cocktail_path %>
-</button>
+  <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-primary" %>
+
+  <%= link_to new_cocktail_path do %>
+    <i class="fas fa-pencil-ruler"></i>
+  <% end %>
