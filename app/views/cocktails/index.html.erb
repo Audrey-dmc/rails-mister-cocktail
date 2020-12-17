@@ -3,9 +3,11 @@
   <p>This website is dedicated to cocktails</p>
   <!-- <img src="/images/images_home_1.jpg" alt="image d'un cocktail"> -->
   <%= link_to new_cocktail_path do %>
-     <i class="fas fa-arrow-circle-down"></i>
+     <i class="fas fa-arrow-circle-down fa-3x"></i>
     <% end %>
 </div>
+
+<div class="title-section2"><h2>Quelques cocktails ont déjà été créés</h2></div>
 
   <div class="row">
       <% @cocktails.each do |cocktail|  %>
